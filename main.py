@@ -4,29 +4,26 @@ import random
 import sys
 from time import time
 def gcd( a, b ):
-		while b != 0:
-			c = a % b
-			a = b
-			b = c
+	while b != 0:
+		c = a % b
+		a = b
+		b = c
 		#a is returned if b == 0
-		return a
+	return a
 def pow(x, y):
-    """Raise x to the power y, where y must be a nonnegative integer."""
-    result = 1
-    for _ in range(y):   # using _ to indicate throwaway iteration variable
-        result = x
-    return result
+	"""Raise x to the power y, where y must be a nonnegative integer."""
+	result = 1
+	for _ in range(y):   # using _ to indicate throwaway iteration variable
+    	result = x
+	return result
 
 
 t1 = time()
 try:
-    p=int(input('p:'))
-    q=int(input('q:'))
+	p=int(input('p:'))
+	q=int(input('q:'))
 except ValueError:
-    print ("Not a number")
-
-
-
+	print ("Not a number")
 n = p * q
 
 print ("product of two numbers is :", n)
@@ -35,22 +32,19 @@ p_1 = p-1
 q_1 = q-1
 pq = (p_1) * (q_1)
 if (p == q):
-    print ("Given values are same. Enter another values")
+	print ("Given values are same. Enter another values")
 else:
-    print("you choosed wright no's.", pq)
+	print("you choosed wright no's.", pq)
 
 
 for x in range(1):
-  g = int(input("Enter a number between 1 & pq"))
-  print ("random number is g:", g)
-  if (gcd(g , pq == 1)):
-        print ("generated random number is public Key")
-  else:
-        g= random.randit(1,pq)
+	g = int(input("Enter a number between 1 & pq"))
+	print ("random number is g:", g)
+	if (gcd(g , pq == 1)):
+		print ("generated random number is public Key")
+	else:
+    	g= random.randit(1,pq)
         print ("random number is g:", g)
-
-
-
 
 #private key
 
@@ -65,15 +59,13 @@ print ("private key is d:", d)
 #Encryption
 
 try:
-    m=int(input('m:'))
+	m=int(input('m:'))
 
 except ValueError:
-    print ("Not a number")
+	print ("Not a number")
 
 alpha= int(m ** g)
 c= (alpha% pq)
-
-
 print ("encryption of given message is c:", c)
 size2 = c.bit_length()
 size1 = m.bit_length()
